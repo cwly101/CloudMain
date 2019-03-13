@@ -1,0 +1,30 @@
+server:  port: 8083  servlet:    session:      cookie:        name: OAUTH2SESSION
+spring:
+ redis:
+  host: localhost
+  port: 6379
+  password:
+  database: 0
+  jedis:
+   pool:
+    max-active: 10 #池在给定时间可以分配的最大连接数
+    max-wait: 30 #最大等待毫秒数, 单位为 ms
+    max-idle: 10  #控制一个pool最多有多少个状态为idle的jedis实例；
+    min-idle: 10  # 最少有多少个 
+ mail:    host: smtp.qq.com
+    username: blackrain.cw@qq.com
+    password: cjclpfsbpabdcabj
+    properties:
+     mail:
+      smtp:
+       auth: true
+       starttls:
+        enable: true
+        required: true
+ mvc:  throw-exception-if-no-handler-found: true   #出现错误时, 直接抛出异常
+ resources:    add-mappings: false  #关闭工程中的资源文件建立映射# security:#    oauth2:#      client:#        provider:#          clientId: client_1#          clientSecret: 123456 security:    oauth2:      client:        clientId: client_1        provider:         clientSecret: 123456         accessTokenUri: ${TOKEN_URL:http://localhost:8080}/oauth/token              userAuthorizationUri: ${USER_AUTH_URL:http://localhost:8080}/oauth/authorize         pre-established-redirect-uri: http://localhost:8080/callback         check-token-access: http://localhost:8080/server/oauth/check_token
+email:
+ types: #{sold: SoldEmailSenderImpl,notice: NoticeEmailSenderImpl}
+  sold: com.caowei.service.impl.SoldEmailSenderImpl
+  notice: com.caowei.service.impl.NoticeEmailSenderImpl
+   

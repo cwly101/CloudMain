@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "name": "",
+      "type": "com.caowei.RedisClientAplication",
+      "sourceType": "com.caowei.RedisClientAplication"
+    },
+    {
+      "name": "email",
+      "type": "com.caowei.config.ReadConfigInfo",
+      "sourceType": "com.caowei.config.ReadConfigInfo"
+    }
+  ],
+  "properties": [
+    {
+      "name": "email.types",
+      "type": "java.util.Map<java.lang.String,java.lang.String>",
+      "sourceType": "com.caowei.config.ReadConfigInfo"
+    },
+    {
+      "name": "spring.security.oauth2.client.clientId",
+      "type": "java.lang.String",
+      "description": "A description for 'spring.security.oauth2.client.clientId'"
+    }
+  ],
+  "hints": []
+}
