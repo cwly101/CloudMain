@@ -55,7 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		http.formLogin() //登记界面，默认是permit All
 		.and()
-		.authorizeRequests().antMatchers("/login").permitAll() //不用身份认证可以访问
+		.authorizeRequests().antMatchers("/login","/readconfig").permitAll() //不用身份认证可以访问
 		.and()
 		.authorizeRequests().anyRequest()
 		//.access("hasRole('USER') or hasRole('ADMIN')")  

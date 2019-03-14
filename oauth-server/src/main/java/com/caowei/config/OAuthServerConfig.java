@@ -33,7 +33,6 @@ public class OAuthServerConfig extends AuthorizationServerConfigurerAdapter {
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		//super.configure(clients);
 		
-		
 		/**
 		 * 客户端对象重要的属性有：
 		 * clientId：（必须）客户端id。
@@ -63,7 +62,7 @@ public class OAuthServerConfig extends AuthorizationServerConfigurerAdapter {
 		  //.authorities("ROLE_USER")  //此客户端可以使用的权限（基于Spring Security authorities）
 		  .secret(new BCryptPasswordEncoder().encode("123456"))
 		  //http://localhost:8080/oauth/authorize?client_id=client_1&response_type=code&scopes=read&redirect_uri=http://localhost:8083/getoauthinfo
-		  .redirectUris("http://localhost:8083/login/oauth2/code/aaa","https://www.getpostman.com/oauth2/callback")  //https://www.getpostman.com/oauth2/callback
+		  .redirectUris("http://localhost:8083/login/oauth2/code/aaa")  //https://www.getpostman.com/oauth2/callback
 		  //redirectUris 关于这个配置项，是在 OAuth2 协议 中，认证成功后的回调地址，因为稍后我们会使用 Postman 作为 测试 工具，
 		  //故此处值固定为 https://www.getpostman.com/oauth2/callback ,此值同样可以配置多个
 		  /**
